@@ -5,7 +5,7 @@ Google Container Registry (GCR) with Lacework.
 
 ## Example
 
-Code inside a `main.tf` file:
+Copy and paste the following code into a `main.tf` file:
 
 ```hcl
 provider "google" {}
@@ -23,4 +23,3 @@ Run Terraform:
 $ terraform init
 $ GOOGLE_CREDENTIALS=account.json GOOGLE_PROJECT=my-project terraform apply
 ```
-

@@ -18,7 +18,7 @@ variable "for_gcr" {
 variable "for_compliance" {
   type        = bool
   default     = true
-  description = "If set to false, avoid configuring the service-account for Compliance integration"
+  description = "If set to true, configure the service-account for Compliance integration"
 }
 
 variable "org_integration" {
