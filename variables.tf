@@ -1,9 +1,3 @@
-variable "for_gcr" {
-  type        = bool
-  default     = false
-  description = "If set to true, configure the service-account for GCR integration"
-}
-
 variable "service_account_name" {
   type        = string
   default     = ""

@@ -12,7 +12,6 @@ TEST_CASES=(
   examples/prevent-service-account-creation
   examples/custom-service-account
   examples/default-service-account
-  examples/for-gcr-integration
 )
 
 log() {
