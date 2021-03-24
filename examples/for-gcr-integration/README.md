@@ -22,7 +22,6 @@ module "lacework_gcr_svc_account" {
   source         = "lacework/service-account/gcp"
   version        = "~> 0.1.3"
   for_gcr        = true
-  for_compliance = false
 }
 ```
 

@@ -5,5 +5,4 @@ provider "google" {}
 module "lacework_gcr_svc_acc" {
   source         = "../../"
   for_gcr        = true
-  for_compliance = false
 }
