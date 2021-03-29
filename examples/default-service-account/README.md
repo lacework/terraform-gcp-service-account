@@ -1,7 +1,8 @@
 # Create Service Account With Default Settings
 
-This example shows how to create a service account to provide Lacework
-read-only access to a Google Cloud Project.
+This example shows how to create a service account with no roles
+on a Google Cloud Platform Project to be used in conjunction with
+other Lacework GCP modules.
 
 ## Example
 
@@ -22,7 +23,7 @@ provider "lacework" {}
 
 module "lacework_svc_account" {
   source  = "lacework/service-account/gcp"
-  version = "~> 0.1.0"
+  version = "~> 1.0"
 }
 ```
 
