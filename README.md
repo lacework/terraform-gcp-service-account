@@ -17,6 +17,7 @@ other Lacework GCP modules.
 |project_id|A project ID different from the default defined inside the provider|string|""|false|
 |service_account_name|The Service Account name|string|""|false|
 |create|Set to false to prevent the module from creating any resources|bool|false|false|
+|key_rotation_duration_days|Duration to use single service account key for|number|0|false|
 
 
 ## Outputs

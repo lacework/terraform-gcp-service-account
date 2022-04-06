@@ -19,3 +19,9 @@ variable "create" {
   default     = true
   description = "Set to false to prevent the module from creating any resources"
 }
+
+variable "key_rotation_duration_days" {
+  type        = number
+  default     = 0
+  description = "Duration after which to rotate service account key"
+}
