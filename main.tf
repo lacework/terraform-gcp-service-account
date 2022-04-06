@@ -5,6 +5,7 @@ locals {
   ) : ""
   service_account_name = length(var.service_account_name) > 0 ? (
     var.service_account_name ) : "lwsvc-${random_id.uniq.hex}"
+  use_keepers = var.key_rotation_duration_days > 0 ? true : false
 }
 
 resource "random_id" "uniq" {
@@ -13,6 +14,11 @@ resource "random_id" "uniq" {
 
 data "google_project" "selected" {
   project_id = var.project_id
+}
+
+resource "time_rotating" "lacework_key_rotation" {
+  count         = local.use_keepers ? 1 : 0
+  rotation_days = var.key_rotation_duration_days
 }
 
 resource "google_service_account" "lacework" {
@@ -25,4 +31,5 @@ resource "google_service_account" "lacework" {
 resource "google_service_account_key" "lacework" {
   count              = var.create ? 1 : 0
   service_account_id = google_service_account.lacework[count.index].name
+  keepers            =  local.use_keepers ? time_rotating.lacework_key_rotation.rotation_rfc3339 : {}
 }
