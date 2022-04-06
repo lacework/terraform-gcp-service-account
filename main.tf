@@ -18,7 +18,8 @@ data "google_project" "selected" {
 
 resource "time_rotating" "lacework_key_rotation" {
   count         = local.use_keepers ? 1 : 0
-  rotation_days = var.key_rotation_duration_days
+  rotation_minutes = var.key_rotation_duration_days
+  # can test using minutes
 }
 
 resource "google_service_account" "lacework" {
@@ -31,5 +32,5 @@ resource "google_service_account" "lacework" {
 resource "google_service_account_key" "lacework" {
   count              = var.create ? 1 : 0
   service_account_id = google_service_account.lacework[count.index].name
-  keepers            =  local.use_keepers ? time_rotating.lacework_key_rotation.rotation_rfc3339 : {}
+  keepers            =  local.use_keepers ? { rotation_time = time_rotating.lacework_key_rotation[count.index].rotation_rfc3339} : null
 }
