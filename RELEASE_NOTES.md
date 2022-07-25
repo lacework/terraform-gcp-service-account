@@ -1,11 +1,9 @@
 # Release Notes
-Another day, another release. These are the release notes for the version `v1.1.0`.
+Another day, another release. These are the release notes for the version `v1.2.0`.
 
 ## Features
-* feat: allow google provider version >= 3.0.0, < 5.0.0 (#25) (Darren)([056a897](https://github.com/lacework/terraform-gcp-service-account/commit/056a897ad2ff0d064fc90bd54415b72b411e4738))
-## Documentation Updates
-* docs: Add contributing documentation (#24) (Darren)([3b6115a](https://github.com/lacework/terraform-gcp-service-account/commit/3b6115abb9983aa591293695aecca044144d9d3e))
+* feat: deprecate support for Terraform 0.12 and 0.13 (#31) (Darren)([e39056f](https://github.com/lacework/terraform-gcp-service-account/commit/e39056f90a624c983af3d0a0b44dc4922e31fd06))
+* feat: Add project id variable validation (#29) (Tim Arenz)([816809d](https://github.com/lacework/terraform-gcp-service-account/commit/816809d744127682e1f8f2537319b1dc164e55d1))
 ## Other Changes
-* chore: version bump to v1.0.2-dev (Lacework)([62ab633](https://github.com/lacework/terraform-gcp-service-account/commit/62ab6332715ac585c0491be228d37b997e4fad1c))
-* ci: ignore .terraform.lock.hcl files (#26) (Salim Afiune)([e4d3037](https://github.com/lacework/terraform-gcp-service-account/commit/e4d3037406b895031ad660cf74fc8397f3711590))
-* ci: sign lacework-releng commits (#23) (Salim Afiune)([65e8dbc](https://github.com/lacework/terraform-gcp-service-account/commit/65e8dbc395428e4af5252b5470e01d26fafaeb57))
+* chore: update PR template (#28) (Darren)([05e7a16](https://github.com/lacework/terraform-gcp-service-account/commit/05e7a16938aa88ccd7893ca2252e4210766b0d9c))
+* ci: version bump to v1.1.1-dev (Lacework)([c3d82a2](https://github.com/lacework/terraform-gcp-service-account/commit/c3d82a2ae2dea6ebb8896f82306591fde4312268))
