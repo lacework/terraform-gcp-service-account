@@ -1,19 +1,17 @@
 locals {
-  project_id = data.google_project.selected.project_id
+  project_id = length(var.project_id) > 0 ? var.project_id : data.google_project.selected.project_id
   service_account_email = var.create ? (
     length(google_service_account.lacework) > 0 ? google_service_account.lacework[0].email : ""
   ) : ""
   service_account_name = length(var.service_account_name) > 0 ? (
-    var.service_account_name ) : "lwsvc-${random_id.uniq.hex}"
+  var.service_account_name) : "lwsvc-${random_id.uniq.hex}"
 }
 
 resource "random_id" "uniq" {
   byte_length = 4
 }
 
-data "google_project" "selected" {
-  project_id = var.project_id
-}
+data "google_project" "selected" {}
 
 resource "google_service_account" "lacework" {
   count        = var.create ? 1 : 0
