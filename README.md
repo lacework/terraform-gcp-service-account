@@ -8,20 +8,24 @@
 Terraform module that creates service account with no roles
 on a Google Cloud Platform Project to be used in conjunction with
 other Lacework GCP modules.
-
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.14 |
-| <a name="requirement_google"></a> [google](#requirement\_google) | >= 3.0.0, < 5.0.0 |
+| <a name="requirement_google"></a> [google](#requirement\_google) | >= 4.4.0, < 5.0.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_google"></a> [google](#provider\_google) | >= 3.0.0, < 5.0.0 |
+| <a name="provider_google"></a> [google](#provider\_google) | >= 4.4.0, < 5.0.0 |
 | <a name="provider_random"></a> [random](#provider\_random) | n/a |
+
+## Modules
+
+No modules.
 
 ## Resources
 
@@ -48,3 +52,4 @@ other Lacework GCP modules.
 | <a name="output_name"></a> [name](#output\_name) | The Service Account name |
 | <a name="output_private_key"></a> [private\_key](#output\_private\_key) | The private key in JSON format, base64 encoded |
 | <a name="output_project_id"></a> [project\_id](#output\_project\_id) | The Project ID |
+<!-- END_TF_DOCS -->
