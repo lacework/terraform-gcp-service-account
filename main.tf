@@ -5,6 +5,10 @@ locals {
   ) : ""
   service_account_name = length(var.service_account_name) > 0 ? (
   var.service_account_name) : "lwsvc-${random_id.uniq.hex}"
+
+  version_file   = "${abspath(path.module)}/VERSION"
+  module_name    = basename(abspath(path.module))
+  module_version = fileexists(local.version_file) ? file(local.version_file) : ""
 }
 
 resource "random_id" "uniq" {
@@ -25,4 +29,9 @@ resource "google_service_account" "lacework" {
 resource "google_service_account_key" "lacework" {
   count              = var.create ? 1 : 0
   service_account_id = google_service_account.lacework[count.index].name
+}
+
+data "lacework_metric_module" "lwmetrics" {
+  name    = local.module_name
+  version = local.module_version
 }
