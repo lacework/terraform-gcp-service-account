@@ -7,7 +7,7 @@ locals {
   var.service_account_name) : "lwsvc-${random_id.uniq.hex}"
 
   version_file   = "${abspath(path.module)}/VERSION"
-  module_name    = basename(abspath(path.module))
+  module_name    = "terraform-gcp-service-account"
   module_version = fileexists(local.version_file) ? file(local.version_file) : ""
 }
 
